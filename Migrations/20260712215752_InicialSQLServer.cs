@@ -5,7 +5,7 @@
 namespace Projeto_Conexao_MYSQL.Migrations
 {
     /// <inheritdoc />
-    public partial class CriarTabelaProdutos : Migration
+    public partial class InicialSQLServer : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -14,11 +14,11 @@ namespace Projeto_Conexao_MYSQL.Migrations
                 name: "Produtos",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    NomesProdutos = table.Column<string>(type: "TEXT", nullable: false),
-                    Estoques = table.Column<int>(type: "INTEGER", nullable: false),
-                    Precos = table.Column<double>(type: "REAL", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    NomesProdutos = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Estoques = table.Column<int>(type: "int", nullable: false),
+                    Precos = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>
                 {

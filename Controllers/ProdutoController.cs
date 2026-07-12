@@ -11,7 +11,7 @@ namespace Projeto_Conexao_MYSQL.Controllers
         private readonly AppDbContext _context;
 
         // O ASP.NET Core passa o banco de dados automaticamente para cá (Injeção de Dependência)
-        public class ProdutoController(AppDbContext context) : Controller
+        public ProdutoController(AppDbContext context)
         {
             _context = context;
         }

@@ -25,5 +25,21 @@ namespace Projeto_Conexao_MYSQL.Controllers
 
             return View();
         }
+
+        [HttpGet]
+        public IActionResult Cadastrar()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Cadastrar(Produto produto)
+        {
+            _context.Produtos.Add(produto);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
+
+        }
     }
 }

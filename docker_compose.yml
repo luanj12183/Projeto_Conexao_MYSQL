@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  sqlserver:
+    image: ://microsoft.com
+    container_name: mssql_container
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=@Bigamendo4707
+    ports:
+      - 1433:1433
